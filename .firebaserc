@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "wirvsvirus-hackathon"
+  },
+  "targets": {
+    "wirvsvirus-hackathon": {
+      "hosting": {
+        "wirvsvirus-spa": [
+          "wirvsvirus-hackathon"
+        ]
+      }
+    }
   }
 }
