@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
 import 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Job } from './job.model';
@@ -11,10 +11,14 @@ export class JobService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getJobs(limit: number): Observable<Job[]> {
+  getJobs(limit: number) {
     return this.firestore.collection<Job>('jobs', ref => ref
       .limit(limit)
-    ).valueChanges()
+    ).get();
+  }
+
+  getJobById(id: string) {
+    return this.firestore.collection<Job>('jobs').doc(id).get();
   }
 
   addJob(job: Job) {
