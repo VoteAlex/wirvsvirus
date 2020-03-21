@@ -51,9 +51,13 @@ export class AddJobComponent implements OnInit, OnDestroy {
 
 	onSubmit() {
     const point = JSON.parse(document.querySelector('lit-place-input').getAttribute('latlng')) as any;
-    const user = this.jobForm.value as Job;
-		user.locationLat = point.lat;
-    user.locationLng = point.lng;
+    const place = JSON.parse(document.querySelector('lit-place-input').getAttribute('place')) as any;
+
+    console.log(place)
+
+    const job = this.jobForm.value as Job;
+		job.locationLat = point.lat;
+    job.locationLng = point.lng;
     
 		this.jobService
 			.addJob(user)
