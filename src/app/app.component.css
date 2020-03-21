@@ -20,10 +20,16 @@ mat-icon.mat-icon {
 
 @media all and (max-width: 600px) {
 
-    .nav-button  { 
-        font-size: 0; 
+    .nav-button {
+        font-size: 0;
         width: 100%;
+
     }
 
-	
+    mat-icon.mat-icon {
+        margin-right: 0px;
+    }
+
+
+
 }
