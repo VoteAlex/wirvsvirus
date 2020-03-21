@@ -1,5 +1,15 @@
-# WirvsvirusSpa
+# Wirvsvirus
 
+Dieser Prototyp ist entstanden durch die Initative des #WirVsVirus-Hackathons vom 20.03.2020 bis 22.03.2020. https://wirvsvirushackathon.org
+
+Weitere Informationen findet man unter dem folgenden Link:
+https://devpost.com/software/039_staatliche_kommunikation_jobportal
+
+
+
+
+
+## Angular Info
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0-next.2.
 
 ## Development server
