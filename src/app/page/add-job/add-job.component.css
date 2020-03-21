@@ -46,3 +46,7 @@ label {
     width: 80%;
     margin: 2rem auto;
 }
+
+.center {
+    text-align: center;
+}
