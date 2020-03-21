@@ -23,7 +23,7 @@ export const getGeoLocation = functions.https.onRequest((request, response) => {
 
 });
 
-
+/*
 
 export const simpleDbFunction = functions.database.ref('/jobs')
     .onCreate((snap, context) => {
@@ -39,3 +39,5 @@ export const activateJob = functions.https.onRequest((request, response) => {
 
     //Activate job
 });
+
+*/
