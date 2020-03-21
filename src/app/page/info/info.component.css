@@ -31,6 +31,11 @@ main {
   background-size: cover;
 }
 
+.team-header-image-dominik {
+  background-image: url('https://avatars3.githubusercontent.com/u/5640414?s=400&u=47ebc0e1d25000aaccb3044f08c4b74b477d139e&v=4');
+  background-size: cover;
+}
+
 .section-headline {
   padding: 1rem;
 }
