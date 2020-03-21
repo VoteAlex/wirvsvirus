@@ -11,8 +11,11 @@ export class JobService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getJobs(): Observable<Job[]> {
-    return this.firestore.collection<Job>('jobs').valueChanges();
+  getJobs(limit: number, startAfter: number = 0): Observable<Job[]> {
+    return this.firestore.collection<Job>('jobs', ref => ref
+      .limit(limit)
+      .orderBy('dateSubmitted', 'desc')
+    ).valueChanges()
   }
 
   addJob(job: Job) {

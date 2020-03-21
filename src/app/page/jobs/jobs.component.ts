@@ -29,7 +29,7 @@ export class JobsComponent implements OnInit, OnDestroy {
       this.latitude = p.coords.latitude;
       this.longitude = p.coords.longitude;
 
-      this.jobService.getJobs().pipe(
+      this.jobService.getJobs(50).pipe(
         takeUntil(this.destroyed$),
       ).subscribe(jobs => {
         this.jobs = jobs;
