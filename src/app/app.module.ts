@@ -30,9 +30,9 @@ import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire
   providers: [
     ScreenTrackingService
   ],
+  bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }

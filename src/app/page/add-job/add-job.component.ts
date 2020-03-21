@@ -47,11 +47,11 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	@ViewChild('lit-place-input') place: NgModel;
 
 	onSubmit() {
-		const { lat, lng } = document.querySelector('lit-place-input').getAttribute('latlng') as any;
+		const point = document.querySelector('lit-place-input').getAttribute('latlng') as any;
     
     const user = this.jobForm.value as Job;
-		user.locationLat = lat;
-		user.locationLng = lng;
+		user.locationLat = point.lat;
+		user.locationLng = point.lng;
 
 		this.jobService
 			.addJob(user)
