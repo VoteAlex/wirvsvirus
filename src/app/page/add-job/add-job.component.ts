@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { GeolocationService } from 'src/app/services/geolocation.service';
 import { Job } from 'src/app/services/job.model';
 import { JobService } from 'src/app/services/job.service';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-job',
@@ -12,8 +11,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-job.component.css']
 })
 export class AddJobComponent implements OnInit, OnDestroy {
-
-
   jobs: Job[];
   latitude: number;
   longitude: number;
