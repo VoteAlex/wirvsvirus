@@ -1,29 +1,38 @@
-<main class="wrapper">
+<header class="header-background">
 
+  <div class="header-section">
+
+    <div class="header-headline">
+      <h1>Jobs inserieren</h1>
+      <h2>Erstelle Job Inserate und finde passende Arbeitskräfte</h2>
+    </div>
+
+  </div>
+</header>
+
+<div class="content-center">
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
 
     <mat-form-field class="form-field-full-width">
-      <mat-label>Job Title</mat-label>
-      <input matInput placeholder="placeholder" formControlName="title">
+      <mat-label>Job Titel</mat-label>
+      <input matInput placeholder="Job Titel" formControlName="title">
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
       <mat-label> Adresse (Straße + Hausnr.)</mat-label>
-      <input matInput placeholder="placeholder" formControlName="address">
+      <input matInput placeholder="Adresse (Straße + Hausnr.)" formControlName="address">
     </mat-form-field>
-
-
 
     <mat-form-field class="form-field-full-width">
       <mat-label> Stadt</mat-label>
-      <input matInput placeholder="placeholder" formControlName="city">
+      <input matInput placeholder="Stadt" formControlName="city">
     </mat-form-field>
 
 
     <mat-form-field class="form-field-full-width">
       <mat-label> E-Mail Adresse </mat-label>
-      <input matInput placeholder="placeholder" formControlName="email">
+      <input matInput placeholder="E-Mail Adresse" formControlName="email">
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
@@ -31,10 +40,9 @@
       <textarea matInput placeholder="Ex. It makes me feel..." formControlName="fullDescription"></textarea>
     </mat-form-field>
 
-
-    <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Add</button>
+    <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Jetzt inserieren</button>
 
   </form>
 
 
-</main>
+</div>

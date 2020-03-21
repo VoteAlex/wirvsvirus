@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
-import { Observable } from 'rxjs';
 import { Job } from './job.model';
 
 @Injectable({
@@ -29,7 +28,7 @@ export class JobService {
       dateSubmitted: new Date(),
     };
 
-    jobsCollection.add(insertJob);
+    return jobsCollection.add(insertJob);
   }
 
 
