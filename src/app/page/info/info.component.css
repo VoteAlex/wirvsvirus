@@ -7,6 +7,35 @@ main {
   padding: 1rem;
 }
 
+.info-card {
+  overflow-wrap: break-word;
+}
+
+.mat-card-avatar {
+  height: 60px;
+  width: 60px;
+}
+
+.team-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.team-header-image-alex {
+  background-image: url('https://avatars3.githubusercontent.com/u/1660256?s=460&u=2a7eef6cb6ab01b657b11494ec640c0573dc3e8b&v=4');
+  background-size: cover;
+}
+
+.section-headline {
+  padding: 1rem;
+}
+
+.info-team-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem 1rem;
+}
 
 .info-grid {
     display: grid;
