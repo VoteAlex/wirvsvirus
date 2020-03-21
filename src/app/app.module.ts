@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { AngularFirePerformanceModule } from '@angular/fire/performance';
+import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,13 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    BrowserAnimationsModule
+    AngularFirePerformanceModule,
+    AngularFireAnalyticsModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

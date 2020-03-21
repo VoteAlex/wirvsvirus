@@ -4,3 +4,25 @@
 @import '~normalize.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+app-root {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.app-background {
+    background: #fafafa;
+}
+
+.wrapper {
+    padding: 1rem;
+}

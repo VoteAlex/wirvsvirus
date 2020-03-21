@@ -28,12 +28,19 @@
 
 .header-start {
     text-align: center;
-    margin: 60px 0;
+    margin: 25px 0;
 }
 
-.homepage-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    padding: 1rem;
+.content-center {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+mat-card.mat-card {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    font-weight: 600;
 }

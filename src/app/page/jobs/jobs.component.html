@@ -1,9 +1,34 @@
-<p>jobs works!</p>
+<header class="header-background">
 
+    <div class="header-section">
 
-<pre>{{ jobs | json }}</pre>
+        <div class="header-headline">
+            <h1>Job Suche</h1>
+            <h2>Finde einen Job und helfe anderen durch die Krise</h2>
+        </div>
 
-<pre>latitude :  {{ latitude}}</pre>
-<pre>longitude : {{ longitude}}</pre>
-  
-  
+        <div class="header-start">
+            <input type="text" placeholder="Ort" class="search-input" id="search-input-location">
+            <button mat-raised-button color="accent" id="job-search-button" (click)="searchJobs()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<div class="content-center">
+    <div class="jobs-results">
+        <mat-card *ngFor="let job of jobs" [routerLink]="[job.uid]">
+            <div class="job-title">
+                {{job.title}}
+            </div>
+            <div class="job-dateSubmitted">
+                {{job.dateSubmitted.toDate() | date: 'dd/MM/yyyy'}}
+            </div>
+            <div *ngIf="job.fulltime" class="fulltime-label">
+                Vollzeit
+            </div>
+        </mat-card>
+    </div>
+</div>
