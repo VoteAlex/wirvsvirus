@@ -3,3 +3,7 @@ label {
     justify-content: space-between;
     width: 35%;
 }
+
+.form-field-full-width {
+    width: 100%;
+}

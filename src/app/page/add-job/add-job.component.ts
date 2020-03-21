@@ -19,12 +19,9 @@ export class AddJobComponent implements OnInit, OnDestroy {
   jobForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(300)]),
     address: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(300)]),
+    city: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(300)]),
     email: new FormControl('', [Validators.required, Validators.maxLength(300)]),
     fullDescription: new FormControl('', [Validators.required, Validators.maxLength(300)]),
-    fulltime: new FormControl('', [Validators.required]),
-    jobExperience: new FormControl('', [Validators.maxLength(300)]),
-    wage: new FormControl(''),
-    workHoursPerWeek: new FormControl(''),
   });
 
   constructor(public jobService: JobService, public geoService: GeolocationService) { }

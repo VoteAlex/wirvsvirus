@@ -1,45 +1,40 @@
-<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+<main class="wrapper">
 
-  <label>
-    Job-Titel
-    <input type="text" formControlName="title">
-  </label>
 
-  <label>
-    Adresse (Straße + Hausnr.)
-    <input type="text" formControlName="address">
-  </label>
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
 
-  <label>
-    Stadt
-    <input type="text" formControlName="address">
-  </label>
+    <mat-form-field class="form-field-full-width">
+      <mat-label>Job Title</mat-label>
+      <input matInput placeholder="placeholder" formControlName="title">
+    </mat-form-field>
 
-  <label>
-    E-Mail Adresse
-    <input type="email" formControlName="email">
-  </label>
-  <label>
-    Beschreibungstext
-    <input type="text" formControlName="fullDescription">
-  </label>
-  <label>
-    Vollzeit
-    <input type="checkbox" formControlName="fulltime">
-  </label>
-  <label>
-    Berufserfahrung
-    <input type="text" formControlName="jobExperience">
-  </label>
-  <label>
-    Stundenlohn
-    <input type="text" formControlName="wage">
-  </label>
-  <label>
-    Stunden pro Woche
-    <input type="number" formControlName="workHoursPerWeek">
-  </label>
+    <mat-form-field class="form-field-full-width">
+      <mat-label> Adresse (Straße + Hausnr.)</mat-label>
+      <input matInput placeholder="placeholder" formControlName="address">
+    </mat-form-field>
 
-  <button type="submit" [disabled]="jobForm.invalid">Add</button>
 
-</form>
+
+    <mat-form-field class="form-field-full-width">
+      <mat-label> Stadt</mat-label>
+      <input matInput placeholder="placeholder" formControlName="city">
+    </mat-form-field>
+
+
+    <mat-form-field class="form-field-full-width">
+      <mat-label> E-Mail Adresse </mat-label>
+      <input matInput placeholder="placeholder" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="form-field-full-width">
+      <mat-label> Beschreibungstext </mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="fullDescription"></textarea>
+    </mat-form-field>
+
+
+    <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Add</button>
+
+  </form>
+
+
+</main>

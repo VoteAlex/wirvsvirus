@@ -7,6 +7,7 @@ export const environment = {
     projectId: "wirvsvirus-hackathon",
     storageBucket: "wirvsvirus-hackathon.appspot.com",
     messagingSenderId: "654548196198",
-    appId: "1:654548196198:web:c89f70b4ccf1e38c7606a7"
+    appId: "1:654548196198:web:c89f70b4ccf1e38c7606a7",
+    measurementId: "G-HMRLWR5Y2G"
   },
 };
