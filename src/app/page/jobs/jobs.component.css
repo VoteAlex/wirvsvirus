@@ -37,8 +37,10 @@
     margin-right: 13px;
     background: #ffffffdb;
     border: 0;
+    width: 20rem;
     color: #3f51b5;
     font-weight: 500;
+    border-radius: 5px;
 }
 
 button#job-search-button {

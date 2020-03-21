@@ -24,12 +24,11 @@ export class JobsComponent implements OnInit, OnDestroy {
   async ngOnInit(): Promise<void> {
 
     try {
-
       const p = await this.geoService.getCurrentPosition();
       this.latitude = p.coords.latitude;
       this.longitude = p.coords.longitude;
 
-      this.jobService.getJobs(50).pipe(
+      this.jobService.getJobs(25).pipe(
         takeUntil(this.destroyed$),
       ).subscribe(jobs => {
         this.jobs = jobs;
@@ -44,6 +43,14 @@ export class JobsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroyed$.next();
     this.destroyed$.complete();
+  }
+
+  searchJobs() {
+    const searchTitle = document.getElementById('search-input-title') as HTMLInputElement;
+    const searchLocation = document.getElementById('search-input-location') as HTMLInputElement;
+
+    console.log(searchTitle.value);
+    console.log(searchLocation.value);
   }
 
 }

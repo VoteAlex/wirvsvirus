@@ -8,9 +8,8 @@
         </div>
 
         <div class="header-start">
-            <input type="text" placeholder="Job Titel" class="search-input" id="search-input-title">
             <input type="text" placeholder="Ort" class="search-input" id="search-input-location">
-            <button mat-raised-button color="accent" id="job-search-button">
+            <button mat-raised-button color="accent" id="job-search-button" (click)="searchJobs()">
                 <mat-icon>search</mat-icon>
             </button>
         </div>
