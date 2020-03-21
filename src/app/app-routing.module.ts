@@ -5,6 +5,7 @@ const routes: Routes = [
   
 	{ path: '', loadChildren: () => import('./page/landing/landing.module').then((m) => m.LandingModule) },
 	{ path: 'jobs', loadChildren: () => import('./page/jobs/jobs.module').then((m) => m.JobsModule) },
+	{ path: 'info', loadChildren: () => import('./page/info/info.module').then((m) => m.InfoModule)},
 	{ path: '**', redirectTo: "/" },
 
 ];
