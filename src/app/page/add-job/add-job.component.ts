@@ -21,12 +21,13 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	destroyed$ = new Subject();
 	public Editor = ClassicEditor;
 
+	selectedAddress: any
+
 	@Input() count: number = 0;
 
 	jobForm = new FormGroup({
 		title: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		company: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
-		address: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		email: new FormControl('', [ Validators.required, Validators.maxLength(300) ]),
 		fullDescription: new FormControl('', [ Validators.required, Validators.maxLength(300) ])
 	});
@@ -53,16 +54,18 @@ export class AddJobComponent implements OnInit, OnDestroy {
 		this.destroyed$.complete();
 	}
 
-	@ViewChild('lit-place-input') place: NgModel;
+	addressSelection(evt: any) {
+		this.selectedAddress = {
+			lat: evt.geometry.location.lat(),
+			lng: evt.geometry.location.lng(),
+    	}
+	}
 
 	onSubmit() {
-		const point = JSON.parse(document.querySelector('lit-place-input').getAttribute('latlng')) as any;
-		const place = JSON.parse(document.querySelector('lit-place-input').getAttribute('place')) as any;
 		const job = this.jobForm.value as Job;
-		job.locationLat = point.lat;
-		job.locationLng = point.lng;
-		job.place = place;
-
+		job.locationLat = this.selectedAddress.lat;
+		job.locationLng = this.selectedAddress.lng;
+	
 		this.jobService
 			.addJob(job)
 			.then(() => {
