@@ -1,4 +1,9 @@
 button.active {
-    border-bottom: 2px solid white;
-    border-radius: 0;
+    background: #6c80f1;
+}
+
+mat-icon.mat-icon {
+    line-height: 23px;
+    font-size: 24px;
+    margin-right: 10px;
 }
