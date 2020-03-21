@@ -1,19 +1,20 @@
-<mat-toolbar color="primary">
-  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">
-    <mat-icon>home</mat-icon>Startseite
-  </button>
+<div class="nav-bar">
+  <mat-toolbar color="primary">
+    <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">
+      <mat-icon>home</mat-icon>Startseite
+    </button>
 
-  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/jobs">
-    <mat-icon>search</mat-icon>Jobs finden
-  </button>
+    <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/jobs">
+      <mat-icon>search</mat-icon>Jobs finden
+    </button>
 
-  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/add">
-    <mat-icon>add</mat-icon>Job inserieren
-  </button>
+    <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/add">
+      <mat-icon>add</mat-icon>Job inserieren
+    </button>
 
-  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/info">
-    <mat-icon>info</mat-icon>Informationen
-  </button>
-</mat-toolbar>
-
+    <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/info">
+      <mat-icon>info</mat-icon>Informationen
+    </button>
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>
