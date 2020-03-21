@@ -1,12 +1,25 @@
-
-
-
 <p>jobs works!</p>
 
 
 <pre>{{ jobs | json }}</pre>
 
-
-
 <pre>latitude :  {{ latitude}}</pre>
 <pre>longitude : {{ longitude}}</pre>
+
+<label>
+    Name:
+    <input type="text" [formControl]="name">
+  </label>
+  
+  
+  
+  <p>
+    Value: {{ name.value }}
+  </p>
+  
+  
+  <p>
+    <button (click)="updateName()">Update Name</button>
+  </p>
+  
+  

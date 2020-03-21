@@ -4,6 +4,7 @@ import { Job } from 'src/app/services/job.model';
 import { JobService } from 'src/app/services/job.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-jobs',
@@ -17,6 +18,12 @@ export class JobsComponent implements OnInit, OnDestroy {
   latitude: number;
   longitude: number;
   destroyed$ = new Subject();
+
+  name = new FormControl('');
+
+  updateName() {
+    this.name.setValue('Nancy');
+  }
 
   constructor(public jobService: JobService, public geoService: GeolocationService) { }
 

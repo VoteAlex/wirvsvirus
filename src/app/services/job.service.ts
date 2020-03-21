@@ -15,5 +15,16 @@ export class JobService {
     return this.firestore.collection<Job>('jobs').valueChanges();
   }
 
+  addJob(job: Job) {
+    const jobsCollection = this.firestore.collection<Job>('jobs');
+
+    const insertJob = {
+      ...job,
+      dateSubmitted: new Date(),
+    };
+
+    jobsCollection.add(insertJob);
+  }
+
 
 }

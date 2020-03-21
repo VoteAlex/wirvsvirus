@@ -1,0 +1,45 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Job-Titel
+    <input type="text" formControlName="title">
+  </label>
+
+  <label>
+    Adresse (Straße + Hausnr.)
+    <input type="text" formControlName="address">
+  </label>
+
+  <label>
+    Stadt
+    <input type="text" formControlName="address">
+  </label>
+
+  <label>
+    E-Mail Adresse
+    <input type="email" formControlName="email">
+  </label>
+  <label>
+    Beschreibungstext
+    <input type="text" formControlName="fullDescription">
+  </label>
+  <label>
+    Vollzeit
+    <input type="checkbox" formControlName="fulltime">
+  </label>
+  <label>
+    Berufserfahrung
+    <input type="text" formControlName="jobExperience">
+  </label>
+  <label>
+    Stundenlohn
+    <input type="text" formControlName="wage">
+  </label>
+  <label>
+    Stunden pro Woche
+    <input type="number" formControlName="workHoursPerWeek">
+  </label>
+
+  <button type="submit" [disabled]="jobForm.invalid">Add</button>
+
+</form>

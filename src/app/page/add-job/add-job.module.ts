@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JobsRoutingModule } from './jobs-routing.module';
-import { JobsComponent } from './jobs.component';
+import { AddJobRoutingModule } from './add-job-routing.module';
+import { AddJobComponent } from './add-job.component';
 
 @NgModule({
-  declarations: [JobsComponent],
+  declarations: [AddJobComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    JobsRoutingModule
+    AddJobRoutingModule
   ]
 })
-export class JobsModule { }
+export class AddJobModule { }

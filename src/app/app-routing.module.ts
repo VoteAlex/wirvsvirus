@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   
 	{ path: '', loadChildren: () => import('./page/landing/landing.module').then((m) => m.LandingModule) },
 	{ path: 'jobs', loadChildren: () => import('./page/jobs/jobs.module').then((m) => m.JobsModule) },
+	{ path: 'add', loadChildren: () => import('./page/add-job/add-job.module').then((m) => m.AddJobModule) },
 	{ path: '**', redirectTo: "/" },
 
 ];
