@@ -10,6 +10,8 @@
   </div>
 </header>
 
+
+
 <div class="content-center">
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
@@ -17,6 +19,12 @@
     <mat-form-field class="form-field-full-width">
       <mat-label>Job Titel</mat-label>
       <input matInput placeholder="Job Titel" formControlName="title">
+    </mat-form-field>
+
+
+    <mat-form-field class="form-field-full-width">
+      <mat-label>Unternehmen </mat-label>
+      <input matInput placeholder="Unternehmen" formControlName="company">
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
@@ -38,9 +46,14 @@
     <mat-form-field class="form-field-full-width">
       <mat-label> Beschreibungstext </mat-label>
       <textarea matInput placeholder="Ex. It makes me feel..." formControlName="fullDescription"></textarea>
+      <textarea rows="7" matInput placeholder="Ex. It makes me feel..." formControlName="fullDescription"></textarea>
     </mat-form-field>
 
     <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Jetzt inserieren</button>
+
+
+    <!-- https://smashah.github.io/lit-place-input/?path=/docs/litplaceinput--simple -->
+    <lit-place-input apiKey="AIzaSyCQjwnft-x6cXQYDkGNYBzaevanW3mVNBA" searchCountryCode="DE" label="Choose Place" ></lit-place-input>
 
   </form>
 
