@@ -31,7 +31,14 @@ export class JobsComponent implements OnInit, OnDestroy {
       this.jobService.getJobs(25).pipe(
         takeUntil(this.destroyed$),
       ).subscribe(jobs => {
-        this.jobs = jobs;
+        const jobsData = [];
+        jobs.forEach(doc => {
+          jobsData.push({
+            ...doc.data(),
+            uid: doc.id,
+          });
+        });
+        this.jobs = jobsData;
       })
 
     } catch (error) {

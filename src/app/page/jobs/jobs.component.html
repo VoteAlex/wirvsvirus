@@ -19,7 +19,7 @@
 
 <div class="content-center">
     <div class="jobs-results">
-        <mat-card *ngFor="let job of jobs">
+        <mat-card *ngFor="let job of jobs" [routerLink]="[job.uid]">
             <div class="job-title">
                 {{job.title}}
             </div>
