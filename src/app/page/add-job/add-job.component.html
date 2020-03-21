@@ -21,6 +21,10 @@
       <input matInput placeholder="Job Titel" formControlName="title">
     </mat-form-field>
 
+      <lit-place-input id="wc-city" apiKey="AIzaSyCQjwnft-x6cXQYDkGNYBzaevanW3mVNBA" searchCountryCode="DE" label="Stadt">
+      </lit-place-input>
+
+
 
     <mat-form-field class="form-field-full-width">
       <mat-label>Unternehmen </mat-label>
@@ -50,10 +54,6 @@
     </mat-form-field>
 
     <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Jetzt inserieren</button>
-
-
-    <!-- https://smashah.github.io/lit-place-input/?path=/docs/litplaceinput--simple -->
-    <lit-place-input apiKey="AIzaSyCQjwnft-x6cXQYDkGNYBzaevanW3mVNBA" searchCountryCode="DE" label="Choose Place" ></lit-place-input>
 
   </form>
 

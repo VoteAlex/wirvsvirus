@@ -1,3 +1,6 @@
+import { GeoPoint } from '@google-cloud/firestore';
+
+
 export interface Job {
     uid?: string;
     title?: string;
@@ -12,5 +15,5 @@ export interface Job {
     jobExperience?: string;
     wage?: string;
     workHoursPerWeek?: number;
-    position?: Geolocation;
+    position?: GeoPoint;
 }
