@@ -1,0 +1,87 @@
+.header-background {
+    background: #3f51b5;
+    overflow: hidden;
+}
+
+main {
+  padding: 1rem;
+}
+
+.info-card {
+  overflow-wrap: break-word;
+}
+
+.mat-card-avatar {
+  height: 60px;
+  width: 60px;
+}
+
+.team-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.team-header-image-alex {
+  background-image: url('https://avatars3.githubusercontent.com/u/1660256?s=460&u=2a7eef6cb6ab01b657b11494ec640c0573dc3e8b&v=4');
+  background-size: cover;
+}
+
+.team-header-image-maurice {
+  background-image: url('https://avatars3.githubusercontent.com/u/28057620?s=400&u=0b26ce2b15065eefea0d5558f2a6bd4cb84b2d86&v=4');
+  background-size: cover;
+}
+
+.team-header-image-dominik {
+  background-image: url('https://avatars3.githubusercontent.com/u/5640414?s=400&u=47ebc0e1d25000aaccb3044f08c4b74b477d139e&v=4');
+  background-size: cover;
+}
+
+.section-headline {
+  padding: 1rem;
+}
+
+.info-team-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem 1rem;
+}
+
+.info-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 2rem 1rem;
+ }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    padding-bottom: 60px;
+    padding-top: 60px;
+
+}
+  
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
+}
