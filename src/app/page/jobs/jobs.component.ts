@@ -19,12 +19,6 @@ export class JobsComponent implements OnInit, OnDestroy {
   longitude: number;
   destroyed$ = new Subject();
 
-  name = new FormControl('');
-
-  updateName() {
-    this.name.setValue('Nancy');
-  }
-
   constructor(public jobService: JobService, public geoService: GeolocationService) { }
 
   async ngOnInit(): Promise<void> {
