@@ -23,7 +23,6 @@ export class AddJobComponent implements OnInit, OnDestroy {
 		title: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		company: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		address: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
-		city: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		email: new FormControl('', [ Validators.required, Validators.maxLength(300) ]),
 		fullDescription: new FormControl('', [ Validators.required, Validators.maxLength(300) ])
 	});
@@ -48,7 +47,7 @@ export class AddJobComponent implements OnInit, OnDestroy {
 
 	onSubmit() {
 		const point = document.querySelector('lit-place-input').getAttribute('latlng') as any;
-    
+
     const user = this.jobForm.value as Job;
 		user.locationLat = point.lat;
 		user.locationLng = point.lng;
