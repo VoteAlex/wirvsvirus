@@ -21,6 +21,8 @@ export class JobService {
   }
 
   addJob(job: Job) {
+    console.log("Try to save job")
+
     const jobsCollection = this.firestore.collection<Job>('jobs');
 
     const insertJob = {
