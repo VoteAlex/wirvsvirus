@@ -1,8 +1,8 @@
-<ul>
-    <li><a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/">Startseite</a></li>
-    <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/jobs">Jobs finden</a></li>
-    <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/add">Job inserieren</a></li>
-    <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/info">Informationen</a></li>
-  </ul>
+<mat-toolbar color="primary">
+  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Startseite</button>
+  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/jobs">Jobs finden</button>
+  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/add">Job inserieren</button>
+  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/info">Informationen</button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
