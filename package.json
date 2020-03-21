@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy" : "ng build --prod && firebase deploy --project wirvsvirus-hackathon" 
-
+    "deploy": "ng build --prod && firebase deploy --project wirvsvirus-hackathon"
   },
   "private": true,
   "dependencies": {
@@ -22,10 +21,11 @@
     "@angular/platform-browser": "~9.1.0-next.3",
     "@angular/platform-browser-dynamic": "~9.1.0-next.3",
     "@angular/router": "~9.1.0-next.3",
+    "firebase": "^7.8.0",
+    "normalize.css": "^8.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "firebase": "^7.8.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.0-next.2",

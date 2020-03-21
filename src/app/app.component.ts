@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <img width="300" alt="Angular Logo" src="https://wirvsvirushackathon.org/wp-content/uploads/2020/03/Hackathon_slogan_wei%C3%9F.png">
-    </div>
-    <router-outlet></router-outlet>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'wirvsvirus-spa';
+export class AppComponent implements OnInit {
+
+
+
+  title = 'vmbw-cloud';
+
+  constructor() {}
+
+  ngOnInit(): void {
+
+
+
+  }
+
 }
