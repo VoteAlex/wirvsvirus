@@ -1,0 +1,12 @@
+.header-background {
+    background: #3f51b5;
+    overflow: hidden;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50;
+  }
