@@ -16,7 +16,7 @@ export class JobService {
 
   constructor(private firestore: AngularFirestore) {}
 
-  async getJobs() {
+  async getJobs(): Promise < Job[] > {
 
     const j1 = < Job > {
       description: "Test Description",

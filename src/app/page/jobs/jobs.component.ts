@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { JobService } from 'src/app/services/job.service';
-import { Job } from 'src/app/services/job.model';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  JobService
+} from 'src/app/services/job.service';
+import {
+  Job
+} from 'src/app/services/job.model';
+import {
+  GeolocationService
+} from 'src/app/services/geolocation.service';
+import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-jobs',
@@ -8,21 +19,28 @@ import { Job } from 'src/app/services/job.model';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent implements OnInit {
-  
-  
+
+
   jobs: Job[];
+  latitude: number;
+  longitude: number;
 
-  constructor(private jobService: JobService) {}
+  constructor(public jobService: JobService, public geoService: GeolocationService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise < void > {
 
-    this.jobService.getJobs()
-    .then(
-      data => {
-        this.jobs = data;
-      },
-      err => console.log(err)
-    );
+    try {
+
+      const p  = await this.geoService.getCurrentPosition();
+      this.latitude = p.coords.latitude;
+      this.longitude = p.coords.longitude;
+      
+      this.jobs = await this.jobService.getJobs();
+
+    } catch (error) {
+      console.error(error);
+    }
+
   }
 
 }
