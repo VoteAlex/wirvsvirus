@@ -3,89 +3,59 @@
     <div class="header-section">
 
         <div class="header-headline">
-            <h1> Wir vs Virus Job Portal</h1>
-            <h2>Subheadline</h2>
+            <h1>Miteinander füreinander</h1>
+            <h2>Vermittlungsplatform zur Bewältigung von Personalengpässen</h2>
         </div>
 
         <div class="header-start">
-            <button mat-raised-button>Job inserieren</button>
+            <button routerLink="/add" mat-raised-button>Job inserieren</button>
         </div>
 
     </div>
 </header>
 
+<div class="wrapper">
+    <h2>Miteinander füreinander</h2>
+    <p>
+        Die bevorstehenden Ernten (Spargel, Erdbeeren usw.) können mangels ausländischer Saisonarbeiter (Einreiseverbot)
+        nicht eingebracht werden. Problem: Versorgungsengpässe und wirtschaftliche Niedergang in der Landwirtschaft als
+        Folge.
+    </p>
+</div>
+
 <main class="homepage-grid">
 
     <mat-card class="homepage-card">
         <mat-card-header>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../../assets/drawings/undraw_environment_iaus.svg" alt="Photo of a Title">
-        <mat-card-content>
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>MEHR</button>
-        </mat-card-actions>
-    </mat-card>
-
-    <mat-card class="homepage-card">
-        <mat-card-header>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../../assets/drawings/undraw_Mail_sent_qwwx.svg" alt="Photo of a Title">
-        <mat-card-content>
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>MEHR</button>
-        </mat-card-actions>
-    </mat-card>
-
-
-    <mat-card class="homepage-card">
-        <mat-card-header>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../../assets/drawings/undraw_select_option_y75i.svg" alt="Photo of a Title">
-        <mat-card-content>
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>MEHR</button>
-        </mat-card-actions>
-    </mat-card>
-
-    <mat-card class="homepage-card">
-        <mat-card-header>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            <mat-card-title>Für Arbeitsuchende</mat-card-title>
+            <mat-card-subtitle>Kostenlos und unkompliziert Jobmöglichkeiten finden.</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="../../../assets/drawings/undraw_hiring_cyhs.svg" alt="Photo of a Title">
         <mat-card-content>
             <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                Arbeitsuchende finden auf der Plattform schnell und unkompliziert Jobmöglichkeiten.
+                z. B. Regalauffüllung, Erntehelfer und vieles mehr.
             </p>
         </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>MEHR</button>
+        <mat-card-actions style="text-align: center;">
+            <button routerLink="/jobs" mat-raised-button color="primary">Job finden</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="homepage-card">
+        <mat-card-header>
+            <mat-card-title>Für Betriebe und Unternehmen</mat-card-title>
+            <mat-card-subtitle>Kostenlos und unkompliziert Jobmöglichkeiten finden.</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/drawings/undraw_shared_workspace_hwky.svg" alt="Photo of a Title">
+        <mat-card-content>
+            <p>
+                Arbeitsuchende finden auf der Plattform schnell und unkompliziert Jobmöglichkeiten.
+                z. B. Regalauffüllung, Erntehelfer und vieles mehr.
+            </p>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center;">
+            <button routerLink="/add" mat-raised-button color="primary">Job inserieren</button>
         </mat-card-actions>
     </mat-card>
 
