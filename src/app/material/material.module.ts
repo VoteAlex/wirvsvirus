@@ -7,14 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-
 const modules = [
   MatToolbarModule,
   MatButtonModule,
   MatIconModule,
-  MatCardModule,
   MatInputModule,
   MatCheckboxModule,
+  MatCardModule
 ];
 
 @NgModule({
