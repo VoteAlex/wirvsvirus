@@ -5,6 +5,8 @@ import { GeolocationService } from 'src/app/services/geolocation.service';
 import { Job } from 'src/app/services/job.model';
 import { JobService } from 'src/app/services/job.service';
 import { Title } from '@angular/platform-browser';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-add-job',
@@ -27,10 +29,12 @@ export class AddJobComponent implements OnInit, OnDestroy {
 		fullDescription: new FormControl('', [ Validators.required, Validators.maxLength(300) ])
 	});
 
-	constructor(public jobService: JobService, public geoService: GeolocationService, private titleService: Title) {}
+	constructor(public jobService: JobService, public geoService: GeolocationService, private titleService: Title, private _snackBar: MatSnackBar, private router: Router) {}
 
 	async ngOnInit(): Promise<void> {
-		this.titleService.setTitle('Job inserieren | Miteinander füreinander');
+    this.titleService.setTitle('Job inserieren | Miteinander füreinander');
+    
+    
 
 		try {
 		} catch (error) {
@@ -47,22 +51,28 @@ export class AddJobComponent implements OnInit, OnDestroy {
 
 	onSubmit() {
     const point = JSON.parse(document.querySelector('lit-place-input').getAttribute('latlng')) as any;
-    const user = this.jobForm.value as Job;
-		user.locationLat = point.lat;
-    user.locationLng = point.lng;
+    const place = JSON.parse(document.querySelector('lit-place-input').getAttribute('place')) as any;
+
+    console.log(place)
+
+    const job = this.jobForm.value as Job;
+		job.locationLat = point.lat;
+    job.locationLng = point.lng;
     
 		this.jobService
 			.addJob(user)
 			.then(() => {
-				alert('Dein Job Insert wurde erfolgreich angelegt!');
+        this._snackBar.open("🚀🚀 Dein Job Insert wurde erfolgreich angelegt!", "", { duration: 2000, });
 			})
 			.catch((err) => {
-				console.error(err);
-				alert('Etwas ist schiefgelaufen beim Anlegen deines Inserates!');
+        console.error(err);
+        this._snackBar.open("💥💥 Etwas ist schiefgelaufen beim Anlegen deines Inserates!", "", { duration: 2000, });
 			})
 			.finally(() => {
 				// reset form
-				this.jobForm.reset();
+        this.jobForm.reset();
+        this.router.navigate(['jobs']);
+        
 			});
 	}
 }

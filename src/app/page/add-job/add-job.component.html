@@ -16,13 +16,15 @@
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
 
+<div class="center">
+    <lit-place-input id="wc-city" apiKey="AIzaSyDOKSVsF1lEULUoYU3Wzfo-xiuqD_3cdAA" searchCountryCode="DE" label="Stadt" outlined required style="--mdc-theme-primary:rgba(63, 80, 181,1);">
+    </lit-place-input>
+  </div>
+
     <mat-form-field class="form-field-full-width">
       <mat-label>Job Titel</mat-label>
       <input matInput placeholder="Job Titel" formControlName="title">
     </mat-form-field>
-
-    <lit-place-input id="wc-city" apiKey="AIzaSyDOKSVsF1lEULUoYU3Wzfo-xiuqD_3cdAA" searchCountryCode="DE" label="Stadt">
-      </lit-place-input>
 
 
 
