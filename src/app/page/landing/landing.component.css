@@ -35,6 +35,10 @@
     margin: 60px 0;
 }
 
+.header-start button{
+    margin: 1rem;
+}
+
 .homepage-grid {
     display: grid;
     gap: 1rem;
