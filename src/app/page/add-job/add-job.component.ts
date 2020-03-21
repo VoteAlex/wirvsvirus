@@ -42,7 +42,15 @@ export class AddJobComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.jobService.addJob(this.jobForm.value);
+    this.jobService.addJob(this.jobForm.value).then(() => {
+      alert('Dein Job Insert wurde erfolgreich angelegt!');
+    }).catch(err => {
+      console.error(err);
+      alert('Etwas ist schiefgelaufen beim Anlegen deines Inserates!');
+    }).finally(() => {
+      // reset form
+      this.jobForm.reset();
+    })
   }
 
 }
