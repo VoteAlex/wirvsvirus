@@ -3,6 +3,10 @@
     overflow: hidden;
 }
 
+.mat-card-image {
+    height: 400px;
+}
+
 .header-section {
     text-align: center;
     padding-top: 60px;

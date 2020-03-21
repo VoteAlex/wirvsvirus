@@ -34,10 +34,37 @@
 
     <mat-card>
         <div class="card-title">
+            Eingestellt am
+        </div>
+        <div class="card-content">
+            {{job?.dateSubmitted.toDate() | date: 'dd/MM/yyyy' }}
+        </div>
+    </mat-card>
+
+    <mat-card>
+        <div class="card-title">
             Stundenlohn
         </div>
         <div class="card-content">
             {{job?.wage}}
+        </div>
+    </mat-card>
+
+    <mat-card>
+        <div class="card-title">
+            Berufserfahrung
+        </div>
+        <div class="card-content">
+            {{job?.jobExperience}}
+        </div>
+    </mat-card>
+
+    <mat-card>
+        <div class="card-title">
+            Vollzeit
+        </div>
+        <div class="card-content">
+            {{job?.fulltime ? 'Ja' : 'Nein'}}
         </div>
     </mat-card>
 
