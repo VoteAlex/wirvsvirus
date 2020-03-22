@@ -1,4 +1,6 @@
-# Wirvsvirus
+<img src="./src/assets/logo.png" alt="logo" width="200">
+
+<h4>#wirvsvirus</h4>
 
 ![CI](https://github.com/VoteAlex/wirvsvirus/workflows/CI/badge.svg?branch=master)
 
