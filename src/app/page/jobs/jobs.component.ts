@@ -1,12 +1,11 @@
 import { Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
-import { GeolocationService } from 'src/app/services/geolocation.service';
 import { JobService } from 'src/app/services/job.service';
 import { Subject } from 'rxjs';
 
 
 import {MapInfoWindow, MapMarker} from '@angular/google-maps';
 import { Job } from 'src/app/services/job.model';
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
+import { database } from 'firebase';
 
 @Component({
   selector: 'app-jobs',
@@ -15,18 +14,31 @@ import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 })
 export class JobsComponent implements OnInit, OnDestroy {
   destroyed$ = new Subject();
+  zoom = 13
+  options: google.maps.MapOptions = {
+    maxZoom: 15,
+    minZoom: 8
+  }
 
   center = {
-    lat: 	52.520008,
-    lng: 13.404954
+    lat: 48.774614,
+    lng: 9.1743263
   }
   jobs = new Array()
 
   job: Job;
  
 
-  constructor(public jobService: JobService, public geoService: GeolocationService) { }
+  constructor(public jobService: JobService) {}
    ngOnInit(): void {
+     
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log(position)
+      this.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      }
+    }); 
   }
 
   ngOnDestroy() {
