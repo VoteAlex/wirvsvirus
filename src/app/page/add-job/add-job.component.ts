@@ -56,11 +56,11 @@ export class AddJobComponent implements OnInit, OnDestroy {
     console.log(place)
 
     const job = this.jobForm.value as Job;
-		job.locationLat = point.lat;
+	job.locationLat = point.lat;
     job.locationLng = point.lng;
     
 		this.jobService
-			.addJob(user)
+			.addJob(job)
 			.then(() => {
         this._snackBar.open("🚀🚀 Dein Job Insert wurde erfolgreich angelegt!", "", { duration: 2000, });
 			})
