@@ -20,6 +20,8 @@ export class JobsComponent implements OnInit, OnDestroy {
     minZoom: 8,
     fullscreenControl: false,
     mapTypeControl: false,
+    streetViewControl: false
+
   }
 
   center = {
