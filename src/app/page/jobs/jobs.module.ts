@@ -6,6 +6,10 @@ import { JobsRoutingModule } from './jobs-routing.module';
 import { JobsComponent } from './jobs.component';
 import { DetailComponent } from './detail/detail.component';
 
+import { GoogleMapsModule } from '@angular/google-maps'
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+
+
 @NgModule({
   declarations: [JobsComponent, DetailComponent],
   imports: [
@@ -14,6 +18,8 @@ import { DetailComponent } from './detail/detail.component';
     ReactiveFormsModule,
     JobsRoutingModule,
     MaterialModule,
-  ]
+    GoogleMapsModule,
+    GooglePlaceModule
+  ],
 })
 export class JobsModule { }

@@ -15,27 +15,19 @@
 <div class="content-center">
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
-
-<div class="center">
-    <lit-place-input id="wc-city" apiKey="AIzaSyDOKSVsF1lEULUoYU3Wzfo-xiuqD_3cdAA" searchCountryCode="DE" label="Stadt" outlined required style="--mdc-theme-primary:rgba(63, 80, 181,1);">
-    </lit-place-input>
-  </div>
+    <mat-form-field class="form-field-full-width">
+      <mat-label>Addresse</mat-label>
+      <input matInput type="text" placeholder="Addresse" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="addressSelection($event)">
+    </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
       <mat-label>Job Titel</mat-label>
       <input matInput placeholder="Job Titel" formControlName="title">
     </mat-form-field>
 
-
-
     <mat-form-field class="form-field-full-width">
       <mat-label>Unternehmen </mat-label>
       <input matInput placeholder="Unternehmen" formControlName="company">
-    </mat-form-field>
-
-    <mat-form-field class="form-field-full-width">
-      <mat-label> Adresse (Straße + Hausnr.)</mat-label>
-      <input matInput placeholder="Adresse (Straße + Hausnr.)" formControlName="address">
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
