@@ -40,7 +40,7 @@ export class JobService {
   }
 
   searchNearby(lat: number, lng: number) {
-    return this.geofirestore.collection('jobs').near({ center: new firebase.firestore.GeoPoint(lat, lng), radius: 10000 }).get()
+    return this.geofirestore.collection('jobs').near({ center: new firebase.firestore.GeoPoint(lat, lng), radius: 100 }).get()
   }
 
 }
