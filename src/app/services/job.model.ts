@@ -16,5 +16,6 @@ export interface Job {
     locationLat?: number;
     locationLng?: number;
     place?: any;
+    company?: any;
 
 }
