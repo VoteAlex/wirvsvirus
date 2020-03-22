@@ -38,9 +38,7 @@
         (mapClick)="openInfoWindow(markerElem, marker)"
         ></map-marker>
         <map-info-window>
-            <h2> {{ job?.title }}</h2>
-            <div [innerHTML]="job?.fullDescription"></div>
-            <button color="primary" mat-raised-button routerLink="/jobs/{{ job?.uid }}">Mehr</button>
+            <button color="primary" mat-raised-button routerLink="/jobs/{{ job?.uid }}">{{ job?.title }}</button>
         </map-info-window>
     </google-map>
 </div>
