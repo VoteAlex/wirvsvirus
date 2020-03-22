@@ -20,7 +20,6 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     const jobId = this.activatedRoute.snapshot.params.id;
     this.jobService.getJobById(jobId).then(job => {
-      console.log(job.data());
       this.job = job.data() as Job;
     }).catch(error => {
       console.error(error);

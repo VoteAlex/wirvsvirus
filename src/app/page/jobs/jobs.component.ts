@@ -58,11 +58,8 @@ export class JobsComponent implements OnInit, OnDestroy {
 
 	openInfoWindow(marker: MapMarker, realMarker: any) {
 		this.infoWindow.open(marker);
-
 		this.job = realMarker.job;
 		this.job.uid = realMarker.uid;
-
-		console.table(this.job);
 	}
 
 	searchJobs(evt: any) {
