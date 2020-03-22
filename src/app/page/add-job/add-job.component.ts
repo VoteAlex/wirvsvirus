@@ -29,7 +29,7 @@ export class AddJobComponent implements OnInit, OnDestroy {
 		title: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		company: new FormControl('', [ Validators.required, Validators.minLength(5), Validators.maxLength(300) ]),
 		email: new FormControl('', [ Validators.required, Validators.maxLength(300) ]),
-		fullDescription: new FormControl('', [ Validators.required, Validators.maxLength(300) ])
+		fullDescription: new FormControl('', [ Validators.required, Validators.maxLength(30000) ])
 	});
 
 	constructor(
