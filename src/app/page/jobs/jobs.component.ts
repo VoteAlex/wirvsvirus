@@ -38,7 +38,6 @@ export class JobsComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
     
 		navigator.geolocation.getCurrentPosition((position) => {
-			console.log(position);
 			this.center = {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
@@ -71,9 +70,6 @@ export class JobsComponent implements OnInit, OnDestroy {
     }
     
 		this.jobService.searchNearby(this.center.lat, this.center.lng).then((j) => {
-			j.docs.forEach((d) => {
-				//console.log(d.data())
-			});
 			this.jobs = j.docs.map((d) => {
 				return {
 					position: {

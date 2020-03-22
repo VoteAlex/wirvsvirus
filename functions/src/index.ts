@@ -12,9 +12,7 @@ export const incrementJobCounter = functions.firestore
   .document('jobs/{jobId}')
   .onCreate(
       (change, context) => {
-        console.log("create")
         db.doc('/counters/lLcm2I58RLbRU7nOKc4h').update({"jobs": admin.firestore.FieldValue.increment(1)})
-
         return 0;
       }
     );
@@ -24,7 +22,6 @@ export const decrementJobCounter = functions.firestore
     .onDelete(
         (change, context) => {
           db.doc('/counters/lLcm2I58RLbRU7nOKc4h').update({"jobs": admin.firestore.FieldValue.increment(-1)})
-
           return 0;
         }
     );

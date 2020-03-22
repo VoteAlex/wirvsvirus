@@ -32,7 +32,6 @@ export class JobService {
   }
 
   addJob(job: Job) {
-    console.log("Try to save job")
 
     const jobsCollection = this.geofirestore.collection('jobs');
 
