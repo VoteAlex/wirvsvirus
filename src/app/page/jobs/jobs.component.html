@@ -1,21 +1,28 @@
+<!--
 <header class="header-background">
 
     <div class="header-section">
 
+      
         <div class="header-headline">
             <h1>Job Suche</h1>
             <h2>Finde einen Job und helfe anderen durch die Krise</h2>
         </div>
 
-        <div class="header-start">
-            <input type="text" placeholder="Ort" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)"/>
-        </div>
+
     </div>
 </header>
 
+ -->
+
 <div class="content-center">
+
+    <div class="header-start">
+        <input type="text" placeholder="Stadt eingeben und suchen.." class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)"/>
+    </div>
+
     <google-map
-        height="800px"
+        height="95vh"
         width="100%"
         [zoom]="zoom"
         [options]="options"

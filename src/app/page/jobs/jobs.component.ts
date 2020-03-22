@@ -17,7 +17,9 @@ export class JobsComponent implements OnInit, OnDestroy {
   zoom = 13
   options: google.maps.MapOptions = {
     maxZoom: 15,
-    minZoom: 8
+    minZoom: 8,
+    fullscreenControl: false,
+    mapTypeControl: false,
   }
 
   center = {
