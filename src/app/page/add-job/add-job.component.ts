@@ -19,6 +19,10 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	latitude: number;
 	longitude: number;
 	destroyed$ = new Subject();
+	placesOptions = {
+		componentRestrictions: {country: 'de'}
+	};
+
 	public Editor = ClassicEditor;
 
 	selectedAddress: any

@@ -8,7 +8,7 @@
         </div>
 
         <div class="header-start">
-            <input type="text" placeholder="Ort" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)"/>
+            <input type="text" placeholder="Ort" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)" [options]=placesOptions/>
         </div>
     </div>
 </header>

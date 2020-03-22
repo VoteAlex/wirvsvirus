@@ -16,8 +16,9 @@
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="form-field-full-width">
+
       <mat-label>Adresse</mat-label>
-      <input matInput type="text" placeholder="Adresse" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="addressSelection($event)">
+      <input matInput type="text" placeholder="Adresse" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="addressSelection($event)" [options]=placesOptions>
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">

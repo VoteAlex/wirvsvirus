@@ -16,6 +16,10 @@ import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 export class JobsComponent implements OnInit, OnDestroy {
   destroyed$ = new Subject();
 
+  placesOptions = {
+		componentRestrictions: {country: 'de'}
+	};
+
   center = {
     lat: 	52.520008,
     lng: 13.404954
