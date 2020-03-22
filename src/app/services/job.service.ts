@@ -21,6 +21,12 @@ export class JobService {
     return this.geofirestore.collection('jobs').limit(limit).get();
   }
 
+  getJobCount() {
+    return this.firestore.doc<any>(`counters/lLcm2I58RLbRU7nOKc4h`).get().toPromise().then(doc => {
+      return doc.data().jobs;
+    })
+  }
+
   getJobById(id: string) {
     return this.geofirestore.collection('jobs').doc(id).get();
   }
