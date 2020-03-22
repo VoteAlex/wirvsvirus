@@ -15,5 +15,6 @@ export interface Job {
     workHoursPerWeek?: number;
     locationLat?: number;
     locationLng?: number;
+    place?: any;
 
 }
