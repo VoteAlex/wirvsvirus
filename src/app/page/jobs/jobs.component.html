@@ -32,7 +32,6 @@
         #markerElem
         *ngFor="let marker of jobs"
         [position]="marker.position"
-        [label]="marker.label"
         [title]="marker.title"
         [options]="marker.options"
         (mapClick)="openInfoWindow(markerElem, marker)"

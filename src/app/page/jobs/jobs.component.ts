@@ -83,9 +83,6 @@ export class JobsComponent implements OnInit, OnDestroy {
 						lat: d.data().coordinates.latitude,
 						lng: d.data().coordinates.longitude
 					},
-					label: {
-						//text: d.data().title
-					},
 					title: d.data().title,
 					job: d.data(),
 					uid: d.id
