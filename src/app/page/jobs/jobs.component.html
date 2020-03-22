@@ -28,6 +28,10 @@
         [options]="marker.options"
         (mapClick)="openInfoWindow(markerElem, marker)"
         ></map-marker>
-        <map-info-window>{{ jobTitle }} <br/> {{ jobDescription }} </map-info-window>
+        <map-info-window>
+            <h2> {{ job?.title }}</h2>
+            <div [innerHTML]="job?.fullDescription"></div>
+            <button color="primary" mat-raised-button routerLink="/jobs/{{ job?.uid }}">Mehr</button>
+        </map-info-window>
     </google-map>
 </div>
