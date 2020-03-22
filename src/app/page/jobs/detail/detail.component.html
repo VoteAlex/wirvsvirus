@@ -4,6 +4,8 @@
 
         <div class="header-headline">
             <h1>{{job?.title}}</h1>
+            <h3>{{ job?.company }} | {{ job?.email }}</h3>
+            <p> {{job?.dateSubmitted.toDate() | date: 'dd.MM.yyyy' }}</p>
         </div>
 
         <div class="header-start">
@@ -14,66 +16,13 @@
 </header>
 
 <div class="content-center">
+
     <mat-card>
         <div class="card-title">
             Beschreibung
         </div>
-        <div class="card-content">
-            {{job?.fullDescription}}
+        <div class="card-content"  [innerHTML]="job?.fullDescription">
         </div>
     </mat-card>
 
-    <mat-card>
-        <div class="card-title">
-            Adresse
-        </div>
-        <div class="card-content">
-            {{job?.address}}
-        </div>
-    </mat-card>
-
-    <mat-card>
-        <div class="card-title">
-            Eingestellt am
-        </div>
-        <div class="card-content">
-            {{job?.dateSubmitted.toDate() | date: 'dd/MM/yyyy' }}
-        </div>
-    </mat-card>
-
-    <mat-card>
-        <div class="card-title">
-            Stundenlohn
-        </div>
-        <div class="card-content">
-            {{job?.wage}}
-        </div>
-    </mat-card>
-
-    <mat-card>
-        <div class="card-title">
-            Berufserfahrung
-        </div>
-        <div class="card-content">
-            {{job?.jobExperience}}
-        </div>
-    </mat-card>
-
-    <mat-card>
-        <div class="card-title">
-            Vollzeit
-        </div>
-        <div class="card-content">
-            {{job?.fulltime ? 'Ja' : 'Nein'}}
-        </div>
-    </mat-card>
-
-    <mat-card>
-        <div class="card-title">
-            Stunden pro Woche
-        </div>
-        <div class="card-content">
-            {{job?.workHoursPerWeek}}
-        </div>
-    </mat-card>
 </div>

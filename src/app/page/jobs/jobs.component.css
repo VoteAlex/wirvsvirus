@@ -28,19 +28,35 @@
 
 .header-start {
     text-align: center;
-    margin: 60px 0;
+    position: fixed;
+    margin-top: 6px;
+    z-index: 10000;
+    top: 80px;
+    left: 20px;
+}
+
+@media all and (max-width: 600px) {
+    .header-start {
+        margin-top: -1px;
+        top: 63px;
+        left: 6px;
+    }
+}
+
+.search-input:focus {
+    background: #FFFFFF;
 }
 
 .search-input {
     padding: 1rem;
     outline: 0;
     margin-right: 13px;
-    background: #ffffffdb;
+    background: #FFFFFF;
     border: 0;
-    width: 20rem;
-    color: #3f51b5;
-    font-weight: 500;
-    border-radius: 5px;
+    color: #2d2d2d;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
 }
 
 button#job-search-button {
@@ -48,15 +64,11 @@ button#job-search-button {
 }
 
 ::placeholder {
-    color: #3f51b5;
-    font-weight: 500;
+    color: #7c7c7c;
     opacity: 1;
 }
 
-.content-center {
-    width: 100%;
-    /*margin: 1rem auto;*/
-}
+
 
 mat-card.mat-card {
     margin-bottom: 1rem;

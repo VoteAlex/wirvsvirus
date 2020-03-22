@@ -26,6 +26,11 @@ main {
   background-size: cover;
 }
 
+.team-header-image-johannes {
+  background-image: url('https://www.xing.com/image/3_8_8_33479687b_19312760_2/johannes-bitsch-foto.1024x1024.jpg');
+  background-size: cover;
+}
+
 .team-header-image-maurice {
   background-image: url('https://avatars3.githubusercontent.com/u/28057620?s=400&u=0b26ce2b15065eefea0d5558f2a6bd4cb84b2d86&v=4');
   background-size: cover;

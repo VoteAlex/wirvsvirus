@@ -15,10 +15,6 @@
 <div class="content-center">
 
   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
-    <mat-form-field class="form-field-full-width">
-      <mat-label>Adresse</mat-label>
-      <input matInput type="text" placeholder="Adresse" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="addressSelection($event)">
-    </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
       <mat-label>Job Titel</mat-label>
@@ -31,17 +27,18 @@
     </mat-form-field>
 
     <mat-form-field class="form-field-full-width">
+      <mat-label>Adresse</mat-label>
+      <input matInput type="text" placeholder="Adresse" class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="addressSelection($event)" [options]=placesOptions>
+    </mat-form-field>
+
+ 
+    <mat-form-field class="form-field-full-width">
       <mat-label> E-Mail Adresse </mat-label>
       <input matInput placeholder="E-Mail Adresse" formControlName="email">
     </mat-form-field>
 
- <!--  
-   <mat-form-field class="form-field-full-width">
-      <mat-label> Beschreibungstext </mat-label>
-      <textarea rows="7" matInput placeholder="Ex. It makes me feel..." formControlName="fullDescription"></textarea>
-    </mat-form-field> -->
     <br>
-    <ckeditor formControlName="fullDescription" [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', 'alignment', 'bulletedList', 'numberedList'  ]}"></ckeditor>
+    <ckeditor formControlName="fullDescription" placeholder="Type the content here!" [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', 'alignment', 'bulletedList', 'numberedList'  ]}"></ckeditor>
     <br>
     <button mat-raised-button type="submit" [disabled]="jobForm.invalid">Jetzt inserieren</button>
   

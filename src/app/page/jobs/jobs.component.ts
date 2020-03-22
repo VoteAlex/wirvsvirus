@@ -1,81 +1,96 @@
-import { Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
-import { GeolocationService } from 'src/app/services/geolocation.service';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { Subject } from 'rxjs';
 
-
-import {MapInfoWindow, MapMarker} from '@angular/google-maps';
+import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Job } from 'src/app/services/job.model';
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 
 @Component({
-  selector: 'app-jobs',
-  templateUrl: './jobs.component.html',
-  styleUrls: ['./jobs.component.css']
+	selector: 'app-jobs',
+	templateUrl: './jobs.component.html',
+	styleUrls: [ './jobs.component.css' ]
 })
 export class JobsComponent implements OnInit, OnDestroy {
-  destroyed$ = new Subject();
 
-  center = {
-    lat: 	52.520008,
-    lng: 13.404954
-  }
-  jobs = new Array()
+  placesOptions = {
+		componentRestrictions: {country: 'de'}
+	};
 
-  job: Job;
- 
+	destroyed$ = new Subject();
+	zoom = 11;
+	options: google.maps.MapOptions = {
+		maxZoom: 15,
+		minZoom: 10,
+		fullscreenControl: false,
+		mapTypeControl: false,
+		streetViewControl: false
+	};
 
-  constructor(public jobService: JobService, public geoService: GeolocationService) { }
-   ngOnInit(): void {
-  }
+	center = {
+		lat: 48.774614,
+		lng: 9.1743263
+	};
+	jobs = new Array();
 
-  ngOnDestroy() {
-    this.destroyed$.next();
-    this.destroyed$.complete();
-  }
+	job: Job;
 
-  @ViewChild(MapInfoWindow, {static: false}) infoWindow: MapInfoWindow;
+	constructor(public jobService: JobService) {}
+	ngOnInit(): void {
+    
+		navigator.geolocation.getCurrentPosition((position) => {
+			console.log(position);
+			this.center = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
 
-  openInfoWindow(marker: MapMarker, realMarker: any) {
-    this.infoWindow.open(marker);
+			this.searchJobs("init");
+		});
+	}
 
-    this.job = realMarker.job;
-    this.job.uid = realMarker.uid;
+	ngOnDestroy() {
+		this.destroyed$.next();
+		this.destroyed$.complete();
+	}
 
-    console.table(this.job)
-  }
+	@ViewChild(MapInfoWindow, { static: false })
+	infoWindow: MapInfoWindow;
 
-  searchJobs(evt: any) {
-    this.center = {
-      lat: evt.geometry.location.lat(),
-      lng: evt.geometry.location.lng(),
+	openInfoWindow(marker: MapMarker, realMarker: any) {
+		this.infoWindow.open(marker);
+
+		this.job = realMarker.job;
+		this.job.uid = realMarker.uid;
+
+		console.table(this.job);
+	}
+
+	searchJobs(evt: any) {
+		if (evt !== 'init') {
+			this.center = {
+				lat: evt.geometry.location.lat(),
+				lng: evt.geometry.location.lng()
+			};
     }
-
-    this.jobService.searchNearby(this.center.lat, this.center.lng)
-      .then(
-        j => {
-          j.docs.forEach(
-            d => {
-              //console.log(d.data())
-            })
-          this.jobs = j.docs.map(
-            d => {
-              return {
-                position: {
-                  lat: d.data().coordinates.latitude,
-                  lng: d.data().coordinates.longitude,
-                },
-                label: {
-                  text: d.data().title,
-                },
-                title: d.data().title,
-                options: { animation: google.maps.Animation.BOUNCE },
-                job: d.data(),
-                uid: d.id
-              }
-            }
-          )
-        }
-    )
-  }
+    
+		this.jobService.searchNearby(this.center.lat, this.center.lng).then((j) => {
+			j.docs.forEach((d) => {
+				//console.log(d.data())
+			});
+			this.jobs = j.docs.map((d) => {
+				return {
+					position: {
+						lat: d.data().coordinates.latitude,
+						lng: d.data().coordinates.longitude
+					},
+					label: {
+						//text: d.data().title
+					},
+					title: d.data().title,
+					job: d.data(),
+					uid: d.id
+				};
+			});
+		});
+	}
 }
