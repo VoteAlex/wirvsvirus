@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+	selector: 'app-landing',
+	templateUrl: './landing.component.html',
+	styleUrls: [ './landing.component.css' ]
 })
 export class LandingComponent implements OnInit {
+	constructor(private titleService: Title, private jobService: JobService) {}
 
-  constructor(private titleService: Title) { }
+	jobsCount = 1;
 
-  ngOnInit(): void {
-    this.titleService.setTitle('Miteinander füreinander');
-  }
-
+	async ngOnInit(): Promise<void> {
+		this.titleService.setTitle('Miteinander füreinander');
+		this.jobsCount  = await this.jobService.getJobCount();
+	}
 }
