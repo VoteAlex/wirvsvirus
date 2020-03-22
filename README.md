@@ -1,4 +1,4 @@
-<img src="./src/assets/logo.png" alt="logo" width="200">
+<img src="https://raw.githubusercontent.com/VoteAlex/wirvsvirus/develop/src/assets/logo.png" alt="logo" width="200">
 
 <h4>#wirvsvirus</h4>
 
