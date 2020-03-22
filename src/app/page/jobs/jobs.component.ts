@@ -4,7 +4,6 @@ import { Subject } from 'rxjs';
 
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Job } from 'src/app/services/job.model';
-import { database } from 'firebase';
 
 @Component({
 	selector: 'app-jobs',
@@ -83,7 +82,6 @@ export class JobsComponent implements OnInit, OnDestroy {
 						text: d.data().title
 					},
 					title: d.data().title,
-					options: { animation: google.maps.Animation.BOUNCE },
 					job: d.data(),
 					uid: d.id
 				};
