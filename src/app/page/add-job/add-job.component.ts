@@ -7,6 +7,7 @@ import { JobService } from 'src/app/services/job.service';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
 	selector: 'app-add-job',
@@ -18,6 +19,7 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	latitude: number;
 	longitude: number;
 	destroyed$ = new Subject();
+	public Editor = ClassicEditor;
 
 	@Input() count: number = 0;
 
