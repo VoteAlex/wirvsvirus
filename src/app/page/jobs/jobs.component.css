@@ -28,15 +28,11 @@
 
 .header-start {
     text-align: center;
-    background: #3f51b5;
-
-    margin-top: 6px;
-
     position: fixed;
     margin-top: 6px;
     z-index: 10000;
     top: 80px;
-    left: 0px;
+    left: 20px;
 }
 
 @media all and (max-width: 600px) {
@@ -46,19 +42,19 @@
 }
 
 .search-input:focus {
-    background: #6c80f1;
+    background: #FFFFFF;
 }
 
 .search-input {
     padding: 1rem;
     outline: 0;
     margin-right: 13px;
-    background: #3f51b5;
+    background: #FFFFFF;
     border: 0;
-    color: white;
+    color: #2d2d2d;
     width: 100%;
     border-radius: 4px;
-
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
 }
 
 button#job-search-button {
@@ -66,7 +62,7 @@ button#job-search-button {
 }
 
 ::placeholder {
-    color: white;
+    color: #656565;
     opacity: 1;
 }
 
