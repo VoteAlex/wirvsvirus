@@ -54,8 +54,8 @@ button#job-search-button {
 }
 
 .content-center {
-    width: 80%;
-    margin: 2rem auto;
+    width: 100%;
+    /*margin: 1rem auto;*/
 }
 
 mat-card.mat-card {
