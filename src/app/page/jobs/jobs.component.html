@@ -18,7 +18,7 @@
 <div class="content-center">
 
     <div class="header-start">
-        <input type="text" placeholder="Stadt eingeben und suchen.." class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)"/>
+        <input type="text" placeholder="Stadt eingeben und suchen.." class="search-input" id="search-input-location" ngx-google-places-autocomplete (onAddressChange)="searchJobs($event)" [options]=placesOptions/>
     </div>
 
     <google-map

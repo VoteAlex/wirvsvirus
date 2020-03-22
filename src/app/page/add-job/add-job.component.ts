@@ -21,7 +21,14 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	destroyed$ = new Subject();
 	public Editor = ClassicEditor;
 
-	selectedAddress: any
+	selectedAddress: any;
+
+	placesOptions = {
+		componentRestrictions: {country: 'de'}
+	};
+
+
+	
 
 	@Input() count: number = 0;
 
@@ -41,6 +48,9 @@ export class AddJobComponent implements OnInit, OnDestroy {
 	) {}
 
 	async ngOnInit(): Promise<void> {
+
+		
+
 		this.titleService.setTitle('Job inserieren | Miteinander füreinander');
 
 		try {

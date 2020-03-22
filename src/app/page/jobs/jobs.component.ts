@@ -11,6 +11,11 @@ import { Job } from 'src/app/services/job.model';
 	styleUrls: [ './jobs.component.css' ]
 })
 export class JobsComponent implements OnInit, OnDestroy {
+
+  placesOptions = {
+		componentRestrictions: {country: 'de'}
+	};
+
 	destroyed$ = new Subject();
 	zoom = 11;
 	options: google.maps.MapOptions = {
