@@ -1,14 +1,12 @@
 import { Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import { GeolocationService } from 'src/app/services/geolocation.service';
-import { Job } from 'src/app/services/job.model';
 import { JobService } from 'src/app/services/job.service';
-import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { FormControl } from '@angular/forms';
 
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 
 import {MapInfoWindow, MapMarker} from '@angular/google-maps';
+import { Job } from 'src/app/services/job.model';
+import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-jobs',
@@ -24,8 +22,8 @@ export class JobsComponent implements OnInit, OnDestroy {
   }
   jobs = new Array()
 
-  jobTitle: string
-  jobDescription: string
+  job: Job;
+ 
 
   constructor(public jobService: JobService, public geoService: GeolocationService) { }
    ngOnInit(): void {
@@ -40,8 +38,11 @@ export class JobsComponent implements OnInit, OnDestroy {
 
   openInfoWindow(marker: MapMarker, realMarker: any) {
     this.infoWindow.open(marker);
-    this.jobTitle = realMarker.title
-    this.jobDescription = realMarker.job.fullDescription
+
+    this.job = realMarker.job;
+    this.job.uid = realMarker.uid;
+
+    console.table(this.job)
   }
 
   searchJobs(evt: any) {
@@ -55,7 +56,7 @@ export class JobsComponent implements OnInit, OnDestroy {
         j => {
           j.docs.forEach(
             d => {
-              console.log(d.data())
+              //console.log(d.data())
             })
           this.jobs = j.docs.map(
             d => {
@@ -69,7 +70,8 @@ export class JobsComponent implements OnInit, OnDestroy {
                 },
                 title: d.data().title,
                 options: { animation: google.maps.Animation.BOUNCE },
-                job: d.data()
+                job: d.data(),
+                uid: d.id
               }
             }
           )
