@@ -38,6 +38,8 @@
 @media all and (max-width: 600px) {
     .header-start {
         margin-top: -1px;
+        top: 63px;
+        left: 6px;
     }
 }
 
